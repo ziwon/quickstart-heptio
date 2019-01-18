@@ -4,13 +4,13 @@ set -o xtrace
 set -o nounset
 
 # Where to place your cluster
-REGION="${REGION:-us-west-2}"
-AVAILABILITY_ZONE="${AVAILABILITY_ZONE:-us-west-2a}"
+REGION="${REGION:-ap-northeast-2}"
+AVAILABILITY_ZONE="${AVAILABILITY_ZONE:-ap-northeast-2a}"
 
 # Bucket may exist.
 # Can create a bucket with something like:
 # aws s3api create-bucket --bucket heptio-hello-world-idjfuiewhj --create-bucket-configuration LocationConstraint=us-west-2
-S3_BUCKET="${S3_BUCKET:-quickstart-heptio-com}"
+S3_BUCKET="${S3_BUCKET:-quickstart-heptio}"
 
 # Will error if the bucket doesn't exist or you don't have permission to it.
 aws s3api head-bucket --bucket "${S3_BUCKET}"
@@ -32,7 +32,7 @@ STACK="${STACK:-my-k8s-cluster}"
 # What SSH key you want to allow access to the cluster (must be created ahead of time in your AWS EC2 account)
 KEYNAME="${KEYNAME:-laptop}"
 
-INSTANCE_TYPE="${INSTANCE_TYPE:-m5.large}"
+INSTANCE_TYPE="${INSTANCE_TYPE:-t2.small}"
 
 # What IP addresses should be able to connect over SSH and over the Kubernetes API
 INGRESS=0.0.0.0/0
