@@ -266,7 +266,7 @@ Parameters:
     ConstraintDescription: must be a valid IP CIDR range of the form x.x.x.x/x.
 
   K8sNodeCapacity:
-    Default: '2'
+    Default: '5'
     Description: Initial number of Kubernetes nodes (1-20).
     Type: Number
     MinValue: '1'
